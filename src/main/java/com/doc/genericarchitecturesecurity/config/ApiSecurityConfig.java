@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public abstract class SecurityConfig {
+public abstract class ApiSecurityConfig {
 
     @Value("${app.api.security.url-auth-controller:/api/v1/auth}")
     private String urlAuthController;
@@ -91,8 +91,8 @@ public abstract class SecurityConfig {
         return new JwtAuthenticationFilter(authenticationProvider, urlAuthController);
     }
 
-    @Bean
-    public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
-        return authenticationConfiguration.getAuthenticationManager();
-    }
+//    @Bean
+//    public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
+//        return authenticationConfiguration.getAuthenticationManager();
+//    }
 }
